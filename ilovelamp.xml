@@ -1,0 +1,31 @@
+<form>
+  <label>Lamp Mission Control</label>
+  <fieldset submitButton="true">
+    <input type="checkbox" token="topic">
+      <label>Select Your Things</label>
+      <choice value="Lamp1">Lamp</choice>
+      <initialValue>Lamp1</initialValue>
+    </input>
+    <input type="radio" token="message">
+      <label>Select Your State</label>
+      <choice value="1">On</choice>
+      <choice value="10">Off</choice>
+    </input>
+  </fieldset>
+  <row>
+    <panel>
+      <table>
+        <search>
+          <query>| ilovelamp topic=$topic$ message=$message$</query>
+          <earliest>-15m</earliest>
+          <latest>now</latest>
+        </search>
+        <option name="wrap">true</option>
+        <option name="rowNumbers">false</option>
+        <option name="dataOverlayMode">none</option>
+        <option name="drilldown">cell</option>
+        <option name="count">10</option>
+      </table>
+    </panel>
+  </row>
+</form>
